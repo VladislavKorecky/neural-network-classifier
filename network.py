@@ -48,4 +48,4 @@ class NeuralNetwork(Module):
             Tensor: Neural network's output.
         """
 
-        return softmax(self.forward(x), dim=1)
+        return softmax(self.forward(x))

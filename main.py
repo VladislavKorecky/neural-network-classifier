@@ -14,7 +14,7 @@ from network import NeuralNetwork
 # ------------------
 #       CONFIG
 # ------------------
-EPOCHS = 7
+EPOCHS = 5
 BATCH_SIZE = 64
 LEARNING_RATE = 0.001
 
@@ -66,6 +66,9 @@ def train() -> None:
 # ------------------
 for _ in range(EPOCHS):
     train()
+
+# save the AI's parameters
+t.save(net.state_dict(), "model.txt")
 
 # show the accuracy on a graph
 plot(accuracy_history)
