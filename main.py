@@ -14,7 +14,7 @@ from network import NeuralNetwork
 # ------------------
 #       CONFIG
 # ------------------
-EPOCHS = 5
+EPOCHS = 7
 BATCH_SIZE = 64
 LEARNING_RATE = 0.001
 

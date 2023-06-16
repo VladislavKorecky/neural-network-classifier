@@ -12,16 +12,13 @@ class NeuralNetwork(Module):
         super().__init__()
 
         self.layers = Sequential(
-            Linear(784, 300),
+            Linear(784, 100),
             LeakyReLU(),
 
-            Linear(300, 300),
+            Linear(100, 100),
             LeakyReLU(),
 
-            Linear(300, 300),
-            LeakyReLU(),
-
-            Linear(300, 10)
+            Linear(100, 10)
         )
 
     def forward(self, x: Tensor) -> Tensor:
@@ -48,4 +45,4 @@ class NeuralNetwork(Module):
             Tensor: Neural network's output.
         """
 
-        return softmax(self.forward(x))
+        return softmax(self.forward(x), dim=-1)
